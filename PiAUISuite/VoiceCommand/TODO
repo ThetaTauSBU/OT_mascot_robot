@@ -1,0 +1,4 @@
+GUI interaction
+Take answer functionality out and make it it's own program
+Figure out audio bug which skips first couple of seconds
+Figure out how to cancel out audio coming from speakers, like music (long long term)
