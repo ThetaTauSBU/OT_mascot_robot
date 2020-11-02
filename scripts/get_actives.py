@@ -26,5 +26,8 @@ response = table.scan(
     FilterExpression=Key('Active').eq(True)
 )
 
+# for i in range(len(response['Items'])):
+#     print(str(i) + str(response['Items'][i]))
+
 print("There are " + str(len(response["Items"])) + " active brothers.")
 
