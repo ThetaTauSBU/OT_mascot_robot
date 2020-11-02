@@ -5,6 +5,7 @@
 boto library is required to be installed prior to usage and development.
 """
 import boto3
+from boto3.dynamodb.conditions import Key, Attr
 import sys
 
 s3 = boto3.resource('s3')
@@ -21,14 +22,9 @@ dynamodb_client = boto3.client('dynamodb', region_name=REGION_NAME)
 dynamodb = boto3.resource('dynamodb', region_name=REGION_NAME)
 table = dynamodb.Table(TABLE_NAME)
 
-
-# Use table get item method to get a single item
-resp = table.get_item(
-    TableName=TABLE_NAME,
-    Key={
-        'Active': True,
-        'Chair': sys.argv
-    }
+resp = table.scan(
+    FilterExpression=Attr('Chair').contains("Brotherhood")
 )
 
-print(resp['Item'])
+print(resp['Items'])
+
