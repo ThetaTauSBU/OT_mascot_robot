@@ -6,7 +6,7 @@ import json
 currentLocation = input('Search nearest restaurants in: ')
 
 urlBase = "https://maps.googleapis.com/maps/api/place/textsearch/json?query=restaurants+in+"+currentLocation+"&key="
-api_key = "AIzaSyDmxP_DwnglYZYFM6O_jy_7tOXJXxhNL-Y" #Create your own API key or ask me for it.
+api_key = "" #Create your own API key or ask me for it.
 
 fullUrl = urlBase + api_key
 response = requests.get(fullUrl)
