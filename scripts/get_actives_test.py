@@ -22,6 +22,10 @@ response = table.scan(
     FilterExpression=Key('Active').eq(True)
 )
 
-# prints the number of active bros
-print("There are " + str(len(response["Items"])) + " active brothers.")
+# sort active brothers by number
+active_list = sorted(response['Items'], key = lambda i: i['Number'])
+
+# Prints each element in response
+for i in range(len(active_list)):
+    print(str(i + 1) + ") #" + str(active_list[i]['Number']) + " " + str(active_list[i]['FirstName']) + " " + str(active_list[i]['LastName']))
 
