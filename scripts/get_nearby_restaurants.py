@@ -1,5 +1,3 @@
-# AIzaSyAKNCiMKEWz5NCmZ6fZnyRAqcvytb8aQ1s
-
 import requests
 import json
 
