@@ -23,7 +23,7 @@ dynamodb = boto3.resource('dynamodb', region_name=REGION_NAME)
 table = dynamodb.Table(TABLE_NAME)
 
 resp = table.scan(
-    FilterExpression=Attr('Chair').contains("Brotherhood")
+    FilterExpression=Attr('Chair').contains(sys.argv[1])
 )
 
 print(resp['Items'])
