@@ -8,6 +8,10 @@ import boto3
 from boto3.dynamodb.conditions import Key, Attr
 import sys
 
+if len(sys.argv) != 2:
+    print('Missing chair position argument...')
+    sys.exit(1)
+
 s3 = boto3.resource('s3')
 for bucket in s3.buckets.all():
     print(bucket.name)
